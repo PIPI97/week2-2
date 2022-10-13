@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border: 1px black solid;
+        width: 420px;
+        height: 830px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    tr,
+    td {
+        border: 1px black solid;
+    }
+
+    image {
+        width: 400px;
+        height: 400px;
+
+    }
+</style>
+
+<body>
+
+    <table id="tab">
+        <tr>
+            <td id="im1" onclick="image1()"><img
+                    src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.15752-9/307278811_795293781719235_123081279813124380_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=HGDSskMYODsAX_c605O&_nc_oc=AQl1A97yR8UoJe1ccuHKs_ZjaR0zMet7Ek0N61Q6bQAmgNlWPRd4pu4onsKQf9K-6hAUoViKv2XlnOFxLQFghbkk&_nc_ht=scontent.fdad2-1.fna&oh=03_AdTKnxkxxMxtuvQBRgQ56QsUYiBIThX9WyFOgoVoWy_wRQ&oe=636D5DAA"
+                    alt="girl"></td>
+        </tr>
+        <tr>
+            <td id="im2" onclick="image2()"><img
+                    src="https://scontent.fdad1-2.fna.fbcdn.net/v/t1.15752-9/309821366_1307790266627908_3346602276395466212_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=yASX4TLLel4AX8C5TVm&_nc_ht=scontent.fdad1-2.fna&oh=03_AdQgPlktLP6Bt_hkFhseBGquvGCIFQk-Y83e0Jh7KJ_42w&oe=636B5102"
+                    alt="girl">
+            </td>
+        </tr>
+    </table>
+    <script>
+        let count1 = 0;
+        let count2 = 0;
+
+        function image1() {
+            const image = document.createElement('img');
+            count1++;
+            if (count1 == 2) {
+                image.src = "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.15752-9/307278811_795293781719235_123081279813124380_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=HGDSskMYODsAX_c605O&_nc_oc=AQl1A97yR8UoJe1ccuHKs_ZjaR0zMet7Ek0N61Q6bQAmgNlWPRd4pu4onsKQf9K-6hAUoViKv2XlnOFxLQFghbkk&_nc_ht=scontent.fdad2-1.fna&oh=03_AdTKnxkxxMxtuvQBRgQ56QsUYiBIThX9WyFOgoVoWy_wRQ&oe=636D5DAA";
+                document.querySelector('#im1').replaceChild(image, document.querySelector('#im1').childNodes[0]);
+                count1 = 0
+            } else {
+                image.src = 'https://scontent.fdad1-1.fna.fbcdn.net/v/t1.15752-9/306722735_790864682193203_1226037237723694721_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=htZBXO5LbLwAX-WvOEd&_nc_ht=scontent.fdad1-1.fna&oh=03_AdTVUdWX3j2RtLC9EK8LwptY8rkxxsYTeY_0CC_Xn8FCoQ&oe=636E1BFE';
+                document.querySelector('#im1').replaceChild(image, document.querySelector('#im1').childNodes[0]);
+            }
+            check(count1, count2)
+
+        }
+        function image2() {
+            const image = document.createElement('img');
+            count2++;
+            if (count2 == 2) {
+                image.src = "https://scontent.fdad1-2.fna.fbcdn.net/v/t1.15752-9/309821366_1307790266627908_3346602276395466212_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=yASX4TLLel4AX8C5TVm&_nc_ht=scontent.fdad1-2.fna&oh=03_AdQgPlktLP6Bt_hkFhseBGquvGCIFQk-Y83e0Jh7KJ_42w&oe=636B5102";
+                document.querySelector('#im2').replaceChild(image, document.querySelector('#im2').childNodes[0]);
+                count2 = 0
+            } else {
+                image.src = "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.15752-9/307722882_658724069022007_3228758693984197435_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=I3XcSsBNHM0AX_kZJa_&_nc_ht=scontent.fdad2-1.fna&oh=03_AdQfJMCsNpVnpWPsSSnk0pCSJGQCmmdQVeDjKAuLkEC9jg&oe=636B9B6E";
+                document.querySelector('#im2').replaceChild(image, document.querySelector('#im2').childNodes[0]);
+            }
+            check(count1, count2)
+        }
+        function check(c1, c2) {
+
+            if (c1 === 0 && c2 === 1) {
+                document.getElementById('tab').style.boxShadow = "0 0 10px 10px red"
+            } else if (c1 === 1 && c2 == 0) {
+                document.getElementById('tab').style.boxShadow = "0 0 10px 10px red"
+            } else {
+                document.getElementById('tab').style.boxShadow = "0 0 5px 5px black"
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
