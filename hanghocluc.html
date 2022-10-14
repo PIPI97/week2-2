@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Nhập số điểm của bạn :</h1>
+    <input type="number" id="point" min="0" max="10" step=".01" >
+    <input type="button" onclick="check()" value="tra cứu điểm"> <br>
+    <p id="result"></p>
+    <script>
+        function check() {
+            let value = Number(point.value);
+            if (value < 7) {
+                result.innerText = "loại C"
+            }
+            else if (value >= 7 && value <= 8) {
+                result.innerText = "loại B"
+            }
+            else {
+                result.innerText = "loại A"
+            }
+        }
+    </script>
+</body>
+
+</html>
