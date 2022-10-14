@@ -9,17 +9,25 @@
 </head>
 
 <body>
-    <h1>Nhập số điểm của bạn :</h1>
-    <input type="number" id="point" min="0" max="10" step=".01" >
-    <input type="button" onclick="check()" value="tra cứu điểm"> <br>
+    <h1>Nhập số điểm kiểm tra :</h1>
+    <input type="number" id="point15" min="0" max="10" placeholder="điểm 15p" style="width:95px">
+    <input type="number" id="pointmid" min="0" max="10" placeholder="điểm giữa kỳ" style="width:95px">
+    <input type="number" id="pointend" min="0" max="10" placeholder="điểm cuối kỳ" style="width:95px">
+    <input type="button" onclick="check()" value="Tra cứu điểm"> <br>
     <p id="result"></p>
     <script>
         function check() {
-            let value = Number(point.value);
-            if (value < 7) {
+            let point15rs = Number(point15.value);
+            let pointmidrs = Number(pointmid.value);
+            let pointendrs = Number(pointend.value);
+
+            let pointAll = (point15rs + pointmidrs * 2 + pointendrs * 3) / 6;
+            console.log(pointAll);
+
+            if (pointAll < 7) {
                 result.innerText = "loại C"
             }
-            else if (value >= 7 && value <= 8) {
+            else if (pointAll >= 7 && pointAll <= 8) {
                 result.innerText = "loại B"
             }
             else {
@@ -28,5 +36,3 @@
         }
     </script>
 </body>
-
-</html>
